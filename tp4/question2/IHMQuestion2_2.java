@@ -26,14 +26,65 @@ public class IHMQuestion2_2 extends JFrame {
         setLocation(150,150);pack();show();
         enHaut.setBackground(Color.magenta);
         
+TextArea txt1 = new TextArea("clic du button A");
+        TextArea txt2 = new TextArea("clic du button B");
+        TextArea txt3 = new TextArea("clic du button C");
+      
 
-        // Ã  complÃ©ter Ã  l'identique de la question 2_1, (du copier/coller)...
-        // le bouton A a 3 observateurs jbo1, jbo2 et jbo3
 
-        // le bouton B a 2 observateurs jbo1 et jbo2
-
-        // le bouton C a 1 observateur jbo1
-
+     boutonA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonObserver jbo1 = new question2.JButtonObserver("jbo1",txt1);
+                JButtonObserver jbo2 = new question2.JButtonObserver("jbo2",txt1);
+                JButtonObserver jbo3 = new question2.JButtonObserver("jbo3",txt1);
+                jbo1.actionPerformed123(evt);
+                jbo2.actionPerformed123(evt);
+                jbo3.actionPerformed123(evt);
+            }
+        });
+        
+        boutonB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonObserver jbo1 = new question2.JButtonObserver("jbo1",txt2);
+                JButtonObserver jbo2 = new question2.JButtonObserver("jbo2",txt2);
+                jbo1.actionPerformed123(evt);
+                jbo2.actionPerformed123(evt);
+                
+            }
+        });
+         boutonC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonObserver jbo1 = new question2.JButtonObserver("jbo1",txt3);
+                
+                jbo1.actionPerformed123(evt);
+            
+                
+            }
+        });
+TextArea txtm1 = new TextArea("souris est entrée sur le bouton A");
+        TextArea txtm2 = new TextArea("souris est entrée sur le bouton B");
+        TextArea txtm3 = new TextArea("souris est entrée sur le bouton C");
+            // le bouton A a 1 observateur jmo1
+            boutonA.addMouseListener(new java.awt.event.MouseAdapter(){
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JMouseObserver jmo1 = new question2.JMouseObserver("jmo1",txtm1);
+                jmo1.mouseEntered(evt);
+            }
+        });
+            // le bouton B a 1 observateur jmo2
+            boutonB.addMouseListener(new java.awt.event.MouseAdapter(){
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JMouseObserver jmo2 = new question2.JMouseObserver("jmo2",txtm2);
+                jmo2.mouseEntered(evt);
+            }
+        });
+            // le bouton C a 1 observateur jmo3
+            boutonC.addMouseListener(new java.awt.event.MouseAdapter(){
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JMouseObserver jmo3 = new question2.JMouseObserver("jmo3",txtm3);
+                jmo3.mouseEntered(evt);
+            }
+        });
         // Ã  complÃ©ter pour la question 2_2 (JMouseObserver)
             // le bouton A a 1 observateur jmo1
             // le bouton B a 1 observateur jmo2
